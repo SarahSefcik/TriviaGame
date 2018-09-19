@@ -11,5 +11,12 @@ $(document).ready(function () {
   $("#triviaGameArea").hide();
   $("#triviaStatsArea").hide();
 
+  // Create a Function to Begin the Trivia, Hide the Start Area and Stats Area
+  ($"#startButton").on("click", function() {
+    $("#triviaStartArea").hide();
+    $("#triviaGameArea").show();
+    $("#triviaStatsArea").hide();
+  }
+  
 
 })
