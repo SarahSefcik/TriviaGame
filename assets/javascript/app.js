@@ -3,6 +3,7 @@ var timerCount = 60;
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
+var questionNumber = [1, 2, 3, 4, 5]
 
 // Begin Game Function
 $(document).ready(function() {
@@ -72,7 +73,13 @@ $(document).ready(function() {
         wrongCount++;
       }
 
-      
+      // Update and Display Score Results
+      $("#correctScore").html(correct);
+      $("#incorrectScore").html(incorrect);
+      $("#unansweredScore").html(unanswered);
+
+      // Show the Stats Area
+      $("#triviaStatsArea").show();
 
     }
 })

@@ -28,20 +28,24 @@
       <div id="triviaGameArea">
         <p class="lead">Time Remaining: <span id="timer">60 Seconds</span></p>
 
-        <p id="questionNumber"></p>
+        <p>Question <span id="questionNumber[1]"></span>:</p>
           <input type="radio" name="Q1" value="A">
           <input type="radio" name="Q1" value="B" id="correctAnswer">
           <input type="radio" name="Q1" value="C">
           <input type="radio" name="Q1" value="D">
 
-        <p id="questionNumber"></p>
+        <p>Question <span id="questionNumber[2]"></span>:</p>
           <input type="radio" name="Q2" value="A" id="correctAnswer">
           <input type="radio" name="Q2" value="B">
           <input type="radio" name="Q2" value="C">
           <input type="radio" name="Q2" value="D">
 
       </div>
-      <div id="triviaStatsArea"></div>
+      <div id="triviaStatsArea">
+        <p class="lead">Correct Answers: <span id="correctScore">0</span></p>
+        <p class="lead">Incorrect Answers: <span id="incorrectScore">0</span></p>
+        <p class="lead">Unanswered: <span id="unansweredScore">0</span></p>
+      </div>
     </div>
   </div>
 </body>
