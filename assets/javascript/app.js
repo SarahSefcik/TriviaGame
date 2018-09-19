@@ -39,4 +39,40 @@ $(document).ready(function() {
 
     }
 
+    // Show the Countdown in 1 second increment
+    function countdown() {
+      setInterval(counter, 1000);
+    }
+
+    // Create timesUp Function to Check Accuracy
+    function timesUp() {
+
+      // Check Values
+      var question1 = $('input:radio[name="Q1"]:checked').val();
+      var question2 = $('input:radio[name="Q2"]:checked').val();
+
+      // Add Count to Stats
+      if (question1 == undefined) {
+        unanswered++;
+      }
+      else if (question1 == "#correctAnswer") {
+        correct++;
+      }
+      else {
+        wrongCount++;
+      }
+
+      if (question2 == undefined) {
+        unanswered++;
+      }
+      else if (question2 == "#correctAnswer") {
+        correct++;
+      }
+      else {
+        wrongCount++;
+      }
+
+      
+
+    }
 })
