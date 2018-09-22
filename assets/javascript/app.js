@@ -3,83 +3,80 @@ var timerCount = 60;
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var questionNumber = [1, 2, 3, 4, 5]
+var trivia = [
+  { question: "What's your favorite color?", choices: ["red", "blue", "green", "yellow"], answer: "red" },
+  { question: "What's your favorite color?", choices: ["red", "blue", "green", "yellow"], answer: "red" },
+];
+
 
 // Begin Game Function
 $(document).ready(function() {
 
   // Hide the Game and Final Stats
-  $("#triviaStartArea").hide();
+  $("#triviaStartArea").show();
   $("#triviaGameArea").hide();
   $("#triviaStatsArea").hide();
 
+  for (var i = 0; i < trivia.length; i++) {
+    var html = "";
+
+    html += "<p>Question " + (i + 1) + ": " + trivia[i].question + "</p>";
+    html += "<p><select id='select" + i + "'><option value='unselected'>--</option>";
+    html += "<option value='" + trivia[i].choices[0] + "'>" + trivia[i].choices[0] + "</option>";
+    html += "<option value='" + trivia[i].choices[1] + "'>" + trivia[i].choices[1] + "</option>";
+    html += "<option value='" + trivia[i].choices[2] + "'>" + trivia[i].choices[2] + "</option>";
+    html += "<option value='" + trivia[i].choices[3] + "'>" + trivia[i].choices[3] + "</option></select></p>";
+
+    $("#questionArea").append(html);
+  }
+  
   // Create a Function to Begin the Trivia, Hide the Start Area and Stats Area
-  ($"#startButton").on("click", function() {
+  $("#startButton").on("click", function () {
     $("#triviaStartArea").hide();
     $("#triviaGameArea").show();
     $("#triviaStatsArea").hide();
-    return;
-  }
+    setInterval(counter, 1000);
+  });
   
-    // Create a Function for the Display Areas
-    function counter() {
-      timerCount--;
-      $("#timer").html(timerCount + " Seconds");
-      $("#doneButton").on("click", function() {
-        ("#triviaGameArea").hide();
-        timesUp();
-        ("#triviaStatsArea").show();
-        return;
-      });
+  $("#doneButton").on("click", function () {
+    timesUp();
+  });
 
-      if (count == -1) {
-        timesUp();
-        ("#triviaGameArea").hide();
-        ("#triviaStatsArea").show();
-      }
-
+  // Create a Function for the Display Areas
+  function counter() {
+    timerCount--;
+    $("#timer").html(timerCount + " Seconds");
+    
+    if (timerCount == 0) {
+      timesUp();
     }
 
-    // Show the Countdown in 1 second increment
-    function countdown() {
-      setInterval(counter, 1000);
-    }
+  }
 
     // Create timesUp Function to Check Accuracy
-    function timesUp() {
+  function timesUp() {
+    $("#triviaGameArea").hide();
+    $("#triviaStatsArea").show();
 
-      // Check Values
-      var question1 = $('input:radio[name="Q1"]:checked').val();
-      var question2 = $('input:radio[name="Q2"]:checked').val();
-
-      // Add Count to Stats
-      if (question1 == undefined) {
-        unanswered++;
-      }
-      else if (question1 == "#correctAnswer") {
+      // Check Score
+    for (var i = 0; i < trivia.length; i++){
+      if (trivia[i].answer == $("#select" + i).val()) {
         correct++;
       }
-      else {
-        wrongCount++;
-      }
-
-      if (question2 == undefined) {
+      else if ("unselected" == $("#select" + i).val()) {
         unanswered++;
       }
-      else if (question2 == "#correctAnswer") {
-        correct++;
-      }
       else {
-        wrongCount++;
+        incorrect++;
       }
-
-      // Update and Display Score Results
-      $("#correctScore").html(correct);
-      $("#incorrectScore").html(incorrect);
-      $("#unansweredScore").html(unanswered);
-
-      // Show the Stats Area
-      $("#triviaStatsArea").show();
-
     }
+  
+      
+      // Update and Display Score Results
+      $("#correctScore").text(correct);
+      $("#incorrectScore").text(incorrect);
+      $("#unansweredScore").text(unanswered);
+
+  }
+  
 })

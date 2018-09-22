@@ -26,31 +26,33 @@
         <a class="btn btn-primary btn-lg" role="button" id="startButton">Start</a>
       </div>
       <div id="triviaGameArea">
-        <p class="lead">Time Remaining: <span id="timer">60 Seconds</span></p>
-
-        <p>Question <span id="questionNumber[1]"></span>:</p>
+        <p class="lead">Time Remaining: <span id="timer"></span></p>
+        <div id="questionArea"></div>
+        <!-- <p>Question <span id="questionNumber[1]"></span>:</p><br>
           <input type="radio" name="Q1" value="A">
           <input type="radio" name="Q1" value="B" id="correctAnswer">
           <input type="radio" name="Q1" value="C">
           <input type="radio" name="Q1" value="D">
 
-        <p>Question <span id="questionNumber[2]"></span>:</p>
+        <p>Question <span id="questionNumber[2]"></span>:</p><br>
           <input type="radio" name="Q2" value="A" id="correctAnswer">
           <input type="radio" name="Q2" value="B">
           <input type="radio" name="Q2" value="C">
-          <input type="radio" name="Q2" value="D">
+          <input type="radio" name="Q2" value="D"> -->
+        <br>
+        <a class="btn btn-primary btn-lg" role="button" id="doneButton">Done</a>
 
       </div>
       <div id="triviaStatsArea">
-        <p class="lead">Correct Answers: <span id="correctScore">0</span></p>
-        <p class="lead">Incorrect Answers: <span id="incorrectScore">0</span></p>
-        <p class="lead">Unanswered: <span id="unansweredScore">0</span></p>
+        <p class="lead">Correct Answers: <span id="correctScore"></span></p>
+        <p class="lead">Incorrect Answers: <span id="incorrectScore"></span></p>
+        <p class="lead">Unanswered: <span id="unansweredScore"></span></p>
       </div>
     </div>
   </div>
 </body>
-<script>
+
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/apps.js"></script>
-</script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+
 </html>
