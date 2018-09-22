@@ -15,15 +15,22 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <title>Trivia</title>
 </head>
+
 <body>
   <div class="container">
+    <br>
+    <br>
+    <br>
     <div class="jumbotron">
-      <h1 class="display-4">Simpson's Trivia</h1>
+      <img id="cast" src="../TriviaGame/assets/images/simpsons_cast.png" alt="The Simpson's Cast">
+      <h1 class="display-4">The Simpson's Trivia</h1>
       <div id="triviaStartArea">
-        <p class="lead">How well do you know your Simpson's family?</p>
         <hr class="my-4">
-        <p>You will have 60 seconds to anser 10 Simpson's Trivia questions. Choose wisely and good luck!</p>
+        <p>How well do you know your Simpson's family? You will have 60 seconds to answer 10 Simpson's Trivia questions. Choose wisely and good luck!</p>
+        <br>
         <a class="btn btn-primary btn-lg" role="button" id="startButton">Start</a>
+
+
       </div>
       <div id="triviaGameArea">
         <p class="lead">Time Remaining: <span id="timer"></span></p>
@@ -33,13 +40,19 @@
 
       </div>
       <div id="triviaStatsArea">
+        <br>
+        <br>
+        <br>
+        <br>
         <p class="lead">Correct Answers: <span id="correctScore"></span></p>
         <p class="lead">Incorrect Answers: <span id="incorrectScore"></span></p>
         <p class="lead">Unanswered: <span id="unansweredScore"></span></p>
       </div>
+
     </div>
   </div>
 </body>
+
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/javascript/app.js"></script>
